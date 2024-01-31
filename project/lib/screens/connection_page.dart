@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'home_page_test1.dart';  // Importation de la page HomePageTest1
+import 'home_page_test1.dart';
 import 'home_page_test2.dart';
 
 class ConnectionPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
   final String _identifiantPredefini = 'test';
   final String _motdepassePredefini = 'test';
   final String test2 = 'test2';
-  final String test1 = 'test1';  // Ajout de la variable test1
+  final String test1 = 'test1';
 
   @override
   void dispose() {
@@ -28,26 +28,36 @@ class _ConnectionPageState extends State<ConnectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
         title: const Text('Connexion'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                hintText: 'Entrez votre adresse e-mail',
-              ),
-            ),
-            TextField(
-              controller: _motdepasseController,
-              decoration: const InputDecoration(
-                hintText: 'Entrez votre mot de passe',
-              ),
-            ),
-            const SizedBox(height: 20),
+    ),
+    body: Center(
+    child: Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+    SizedBox(
+    width: 200, // Ancho personalizado para el campo de texto del correo electrónico
+    child: TextField(
+    controller: _emailController,
+    decoration: const InputDecoration(
+    hintText: 'E-mail',
+    ),
+    ),
+    ),
+    const SizedBox(height: 10), // Espaciado entre los campos de texto
+    SizedBox(
+    width: 200, // Ancho personalizado para el campo de texto de la contraseña
+    child: TextField(
+    controller: _motdepasseController,
+    obscureText: true,
+    decoration: const InputDecoration(
+    hintText: 'Mot de passe',
+    ),
+    ),
+    ),
+    const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 String email = _emailController.text;
@@ -80,6 +90,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
           ],
         ),
       ),
+    ),
     );
   }
 }
