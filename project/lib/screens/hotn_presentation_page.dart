@@ -8,11 +8,6 @@ class HotnPresentationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Barre d'applications avec un titre
-      appBar: AppBar(
-        title: const Text('Hot\'n - Présentation'),
-      ),
-      // Marge intérieure de 16.0 pixels autour du contenu
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         // SingleChildScrollView permet de faire défiler le contenu à l'intérieur de la colonne
