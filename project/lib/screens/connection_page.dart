@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'home_page_test1.dart';  // Importation de la page HomePageTest1
 import 'home_page_test2.dart';
 
 class ConnectionPage extends StatefulWidget {
-  const ConnectionPage({super.key});
+  const ConnectionPage({Key? key});
 
   @override
   _ConnectionPageState createState() => _ConnectionPageState();
@@ -15,6 +16,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
   final String _identifiantPredefini = 'test';
   final String _motdepassePredefini = 'test';
   final String test2 = 'test2';
+  final String test1 = 'test1';  // Ajout de la variable test1
 
   @override
   void dispose() {
@@ -59,6 +61,11 @@ class _ConnectionPageState extends State<ConnectionPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const HomePageTest2()),
+                  );
+                } else if (email == test1 && motdepasse == test1) {  // Condition pour test1
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePageTest1()),  // Utilisation de HomePageTest1
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(

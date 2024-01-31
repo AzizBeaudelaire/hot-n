@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'hotn_presentation_page.dart';  // Ajout de cette ligne
 
-class HomePageTest2 extends StatelessWidget {
-  const HomePageTest2({Key? key});
+class HomePageTest1 extends StatelessWidget {
+  const HomePageTest1({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +17,11 @@ class HomePageTest2 extends StatelessWidget {
           children: [
             const CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage('assets/images/Adam.jpg'),
+              backgroundImage: AssetImage('assets/images/Aziz.jpg'),
             ),
             const SizedBox(height: 20),
             Text(
-              'Adam',
+              'Aziz',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 10),
@@ -31,7 +31,7 @@ class HomePageTest2 extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Aime les femmes et les camions', // Description ajoutée
+              'Intéressé par : Les femmes et les bars', // Description ajoutée
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 20),
