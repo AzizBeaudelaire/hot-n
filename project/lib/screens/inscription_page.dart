@@ -21,6 +21,9 @@ class _InscriptionPageState extends State<InscriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    appBar: AppBar(
+    title: const Text('Inscription'),
+    ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

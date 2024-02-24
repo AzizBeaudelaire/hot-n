@@ -28,69 +28,137 @@ class _ConnectionPageState extends State<ConnectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        title: const Text('Connexion'),
-    ),
-    body: Center(
-    child: Padding(
-    padding: const EdgeInsets.all(20.0),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    SizedBox(
-    width: 200, // Ancho personalizado para el campo de texto del correo electrónico
-    child: TextField(
-    controller: _emailController,
-    decoration: const InputDecoration(
-    hintText: 'E-mail',
-    ),
-    ),
-    ),
-    const SizedBox(height: 10), // Espaciado entre los campos de texto
-    SizedBox(
-    width: 200, // Ancho personalizado para el campo de texto de la contraseña
-    child: TextField(
-    controller: _motdepasseController,
-    obscureText: true,
-    decoration: const InputDecoration(
-    hintText: 'Mot de passe',
-    ),
-    ),
-    ),
-    const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                String email = _emailController.text;
-                String motdepasse = _motdepasseController.text;
-                if (email == _identifiantPredefini && motdepasse == _motdepassePredefini) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyHomePage()),
-                  );
-                } else if (email == test2 && motdepasse == test2) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomePageTest2()),
-                  );
-                } else if (email == test1 && motdepasse == test1) {  // Condition pour test1
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomePageTest1()),  // Utilisation de HomePageTest1
-                  );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Votre identifiant ou votre mot de passe est incorrect.'),
-                    ),
-                  );
-                }
-              },
-              child: const Text('Se connecter'),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.purple, // Couleur de fond
+            child: CustomPaint(
+              painter: ArcPainter(), // Dessine un arc de cercle
+              child: Container(), // Conteneur vide pour dessiner l'arc
             ),
-          ],
-        ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0), // Coins arrondis
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 200,
+                            child: TextField(
+                              controller: _emailController,
+                              decoration: const InputDecoration(
+                                hintText: 'E-mail',
+                                border: InputBorder.none, // Pas de bordure
+                              ),
+                            ),
+                          ),
+                          const Divider(), // Ligne de séparation
+                          SizedBox(
+                            width: 200,
+                            child: TextField(
+                              controller: _motdepasseController,
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                hintText: 'Mot de passe',
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      String email = _emailController.text;
+                      String motdepasse = _motdepasseController.text;
+                      if (email == _identifiantPredefini && motdepasse == _motdepassePredefini) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MyHomePage()),
+                        );
+                      } else if (email == test2 && motdepasse == test2) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const HomePageTest2()),
+                        );
+                      } else if (email == test1 && motdepasse == test1) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const HomePageTest1()),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Votre identifiant ou votre mot de passe est incorrect.'),
+                          ),
+                        );
+                      }
+                    },
+                    child: const Text('Se connecter'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 20,
+            child: Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context); // Retour à la page précédente
+                  },
+                ),
+                Text('back'), // Ajout du texte "Back"
+              ],
+            ),
+          ),
+        ],
       ),
-    ),
     );
+  }
+}
+
+// Custom Painter pour dessiner un arc de cercle
+class ArcPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = Colors.pink // Couleur de l'arc
+      ..style = PaintingStyle.fill;
+
+    final double arcRadius = size.width / 2; // Rayon de l'arc (demi-cercle)
+    final double startY = 0; // Début de l'arc en y
+    final double endY = size.height / 3; // Fin de l'arc en y
+
+    final path = Path()
+      ..moveTo(0, startY) // Début du tracé
+      ..arcToPoint(
+        Offset(size.width, startY), // Fin du tracé
+        radius: Radius.circular(arcRadius), // Rayon de l'arc
+        clockwise: false, // Sens antihoraire
+      )
+      ..close(); // Ferme le chemin
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }
