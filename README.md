@@ -27,9 +27,9 @@ Pour l'instant, Hot'n n'est pas encore disponible en téléchargement public. Ce
 Pour toute question ou suggestion, n'hésitez pas à nous contacter :
 
 - Email: contact@hotn-app.com
-- Insta: hot'n
-- Site web: Non dispo
-- Twitter: Non dispo
+- Insta: https://www.instagram.com/hotn_toulouse/
+- Site web: https://azizbeaudelaire.github.io/hot-n_toulouse/
+- Tiktok : https://www.tiktok.com/@hotn_toulouse 
 
 ## Remarque
 
