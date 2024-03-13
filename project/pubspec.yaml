@@ -45,8 +45,7 @@ flutter:
     - assets/images/Aziz.jpg
     - assets/images/Adam.jpg
     - assets/images/Logo_icon_transparent.png
-    - assets/images/fond_motif.png
-    - assets/images/background_pink.png
+    - assets/images/fond.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
