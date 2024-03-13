@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'hotn_presentation_page.dart';  // Ajout de cette ligne
+import 'hotn_presentation_page.dart';
+import 'page_genres.dart'; // Import de la page page_genres.dart
 
 class HomePageTest1 extends StatelessWidget {
   const HomePageTest1({Key? key});
@@ -28,7 +29,7 @@ class HomePageTest1 extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Intéressé par : Les femmes et les bars', // Description ajoutée
+              'Intéressé par : Les femmes et les bars',
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 20),
@@ -50,6 +51,16 @@ class HomePageTest1 extends StatelessWidget {
                 );
               },
               child: const Text('Découvrir Hot\'n'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NewPage()), // Redirection vers la page des genres
+                );
+              },
+              child: const Text('Voir les genres'), // Texte du bouton
             ),
           ],
         ),
