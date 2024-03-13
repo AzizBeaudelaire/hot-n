@@ -9,49 +9,27 @@ class NewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('New Page'),
       ),
-      body: Stack(
-        children: [
-          // Image with Opacity (behind)
-          ColorFiltered(
-            colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.9), // Opacity of 30%
-              BlendMode.srcATop,
-            ),
-            child: Image.asset(
-              'assets/images/fond_motif.png',
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-            ),
-          ),
-          // Background Image (front)
-          Image.asset(
-            'assets/images/background_pink.png',
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/fond.png'),
             fit: BoxFit.cover,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
           ),
-          // Align to top left
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'This is a new page!',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white, // Text color on top of background
-                    ),
-                  ),
-                ],
+        ),
+        child: Center(
+          child: FractionallySizedBox(
+            widthFactor: 0.8, // Ajuste la largeur de l'image à 80% de la largeur de l'écran
+            heightFactor: 0.8, // Ajuste la hauteur de l'image à 80% de la hauteur de l'écran
+            child: Text(
+              'This is a new page!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white, // Text color on top of background
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }

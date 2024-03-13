@@ -30,13 +30,14 @@ class _ConnectionPageState extends State<ConnectionPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            color: Colors.purple, // Couleur de fond
-            child: CustomPaint(
-              painter: ArcPainter(), // Dessine un arc de cercle
-              child: Container(), // Conteneur vide pour dessiner l'arc
-            ),
+          // Background Image
+          Image.asset(
+            'assets/images/fond.png',
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
           ),
+          // Contenu central
           Center(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -112,6 +113,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
               ),
             ),
           ),
+          // Bouton de retour
           Positioned(
             top: 40,
             left: 20,
@@ -130,35 +132,5 @@ class _ConnectionPageState extends State<ConnectionPage> {
         ],
       ),
     );
-  }
-}
-
-// Custom Painter pour dessiner un arc de cercle
-class ArcPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()
-      ..color = Colors.pink // Couleur de l'arc
-      ..style = PaintingStyle.fill;
-
-    final double arcRadius = size.width / 2; // Rayon de l'arc (demi-cercle)
-    final double startY = 0; // Début de l'arc en y
-    final double endY = size.height / 3; // Fin de l'arc en y
-
-    final path = Path()
-      ..moveTo(0, startY) // Début du tracé
-      ..arcToPoint(
-        Offset(size.width, startY), // Fin du tracé
-        radius: Radius.circular(arcRadius), // Rayon de l'arc
-        clockwise: false, // Sens antihoraire
-      )
-      ..close(); // Ferme le chemin
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
   }
 }

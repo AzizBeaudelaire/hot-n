@@ -21,36 +21,48 @@ class _InscriptionPageState extends State<InscriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-    title: const Text('Inscription'),
-    ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                hintText: 'Entrez votre adresse e-mail',
-              ),
+      appBar: AppBar(
+        title: const Text('Inscription'),
+      ),
+      body: Stack(
+        children: [
+          // Background Image
+          Image.asset(
+            'assets/images/fond.png',
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+          ),
+          // Contenu central
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(
+                    hintText: 'Entrez votre adresse e-mail',
+                  ),
+                ),
+                TextField(
+                  controller: _motdepasseController,
+                  decoration: const InputDecoration(
+                    hintText: 'Entrez votre mot de passe',
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    String email = _emailController.text;
+                    String motdepasse = _motdepasseController.text;
+                    // Action à effectuer lorsque le bouton "S'inscrire" est appuyé
+                  },
+                  child: const Text('S\'inscrire'),
+                ),
+              ],
             ),
-            TextField(
-              controller: _motdepasseController,
-              decoration: const InputDecoration(
-                hintText: 'Entrez votre mot de passe' ,
-              ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                String email = _emailController.text;
-                String motdepasse = _motdepasseController.text;
-                // Action à effectuer lorsque le bouton "S'inscrire" est appuyé
-              },
-              child: const Text('S\'inscrire'),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
