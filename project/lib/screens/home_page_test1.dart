@@ -67,7 +67,7 @@ class HomePageTest1 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const NewPage()), // Redirection vers la page des genres
+                      MaterialPageRoute(builder: (context) => const PageGenres()), // Redirection vers la page des genres
                     );
                   },
                   child: const Text('Voir les genres'), // Texte du bouton

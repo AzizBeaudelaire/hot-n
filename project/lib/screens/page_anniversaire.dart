@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'page_anniversaire.dart';
 import 'home_page_test1.dart';
 import '../main.dart';
+import 'page_nom_prenom.dart';
 
-class PageGenres extends StatelessWidget {
-  const PageGenres({Key? key}) : super(key: key);
+class PageAnniversaire extends StatelessWidget {
+  const PageAnniversaire({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class PageGenres extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PageAnniversaire()),
+                    MaterialPageRoute(builder: (context) => PageNomPrenom()),
                   );
                 },
                 child: Text(
@@ -80,28 +80,6 @@ class PageGenres extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Ajoutez votre logique pour gérer le clic sur le bouton ici
-        },
-        backgroundColor: MyColors.myPink, // Couleur de fond du bouton
-        elevation: 0, // Aucune élévation
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(45.0), // Angles arrondis à 90 degrés
-        ),
-        label: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0), // Marge interne verticale
-          child: Text(
-            'Je veux être notifié',
-            style: TextStyle(
-              color: Colors.white, // Couleur du texte
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
