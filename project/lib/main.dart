@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../screens/home_page.dart';  // Assurez-vous que le chemin est correct
-import '../screens/connection_page.dart';  // Assurez-vous que le chemin est correct
-import '../screens/inscription_page.dart';  // Assurez-vous que le chemin est correct
+import 'screens/home_page.dart';  // Assurez-vous que le chemin est correct
+import 'screens/connection_page.dart';  // Assurez-vous que le chemin est correct
+import 'screens/inscription_page.dart';  // Assurez-vous que le chemin est correct
+import 'screens/page_genres.dart';
 
 
 void main() => runApp(const MyApp());
@@ -26,6 +27,9 @@ class MyColors {
     },
   );
 
+  // Définir une couleur primaire personnalisée
+  static const Color myPurplePinkPrimaryValue = Color(0xFF5D378D);
+
   static const MaterialColor myPink = MaterialColor(
     _myPinkColorValue,
     <int, Color>{
@@ -41,6 +45,9 @@ class MyColors {
       900: Color(0xFF880E4F),
     },
   );
+
+  // Définir une couleur primaire personnalisée
+  static const Color myPrimaryColor = Color(0xFF5D378D);
 }
 
 
@@ -53,8 +60,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mon Application de Rencontre',
       theme: ThemeData(
+        primaryColor: MyColors.myPrimaryColor, // Utilisez la couleur primaire définie dans MyColors
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: MyColors.myPurplePink, // Utilisez la couleur pour le swatch primaire
+          primarySwatch: MyColors.myPurplePink,
         ).copyWith(background: MyColors.myPurplePink.shade500),
       ),
       home: const MyHomePage(),

@@ -35,26 +35,26 @@ class PageGenresRecherches extends StatelessWidget {
             ),
           ),
           // Skip Button
-          Positioned(
-            top: 40,
-            right: 20,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PageVeuxVoir()), // Change to appropriate file
-                );
-              },
-              child: Text(
-                'Skip',
-                style: TextStyle(
-                  color: Colors.pink, // Change to your desired color
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+          //Positioned(
+          //  top: 40,
+          //  right: 20,
+          //  child: GestureDetector(
+          //    onTap: () {
+          //      Navigator.push(
+          //        context,
+          //        MaterialPageRoute(builder: (context) => PageVeuxVoir()), // Change to appropriate file
+          //      );
+          //    },
+          //    child: Text(
+          //      'Skip',
+          //      style: TextStyle(
+          //        color: Colors.pink, // Change to your desired color
+          //        fontSize: 18,
+          //        fontWeight: FontWeight.bold,
+          //      ),
+          //    ),
+          //  ),
+          //),
           // Back Button
           Positioned(
             top: 40,

@@ -78,6 +78,125 @@ class PageGenres extends StatelessWidget {
               ),
             ),
           ),
+          // Ajout du texte au milieu de l'écran
+          Center(
+            child: SizedBox(
+              height: 280, // Hauteur fixe de la zone de texte
+              child: Text(
+                'Je suis un·e',
+                textAlign: TextAlign.center, // Centrer le texte horizontalement
+                style: TextStyle(
+                  fontFamily: 'Poppins', // Utilisation de la police Poppins
+                  fontWeight: FontWeight.w800, // Utilisation du poids Medium
+                  fontSize: 28,
+                  color: MyColors.myPurplePinkPrimaryValue, // Conversion de l'entier en couleur
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: 200,
+              child: Text(
+                'Choisis le genre qui te représente le mieux.\n L\'authenticité est la clé des relations significatives',
+                textAlign: TextAlign.center , // Centrer le texte horizontalement
+                style: TextStyle(
+                  fontFamily: 'Poppins', // Utilisation de la police Poppins
+                  fontWeight: FontWeight.w400, // Utilisation du poids Medium
+                  fontSize: 10,
+                  color: Colors.grey, // Conversion de l'entier en couleur
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: MediaQuery.of(context).size.height * 0.4, // Position verticale à 10% de la hauteur de l'écran
+            left: 0,
+            right: 0,
+            child: Center(
+              child: OutlinedButton(
+                onPressed: () {
+                  // Ajoutez votre logique pour gérer le clic sur le bouton ici
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: MyColors.myPink, width: 3), // Contour rose de taille 3
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0), // Marge interne
+                  child: Text(
+                    'Homme',
+                    style: TextStyle(
+                      color: MyColors.myPink, // Couleur du texte rose
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: MediaQuery.of(context).size.height * 0.3, // Position verticale à 10% de la hauteur de l'écran
+            left: 0,
+            right: 0,
+            child: Center(
+              child: OutlinedButton(
+                onPressed: () {
+                  // Ajoutez votre logique pour gérer le clic sur le bouton ici
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: MyColors.myPink, width: 3), // Contour rose de taille 3
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0), // Marge interne
+                  child: Text(
+                    'Femme',
+                    style: TextStyle(
+                      color: MyColors.myPink, // Couleur du texte rose
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: MediaQuery.of(context).size.height * 0.2, // Position verticale à 10% de la hauteur de l'écran
+            left: 0,
+            right: 0,
+            child: Center(
+              child: OutlinedButton(
+                onPressed: () {
+                  // Ajoutez votre logique pour gérer le clic sur le bouton ici
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: MyColors.myPink, width: 3), // Contour rose de taille 3
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0), // Marge interne
+                  child: Text(
+                    'Les autres >',
+                    style: TextStyle(
+                      color: MyColors.myPink, // Couleur du texte rose
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -87,12 +206,12 @@ class PageGenres extends StatelessWidget {
         backgroundColor: MyColors.myPink, // Couleur de fond du bouton
         elevation: 0, // Aucune élévation
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(45.0), // Angles arrondis à 90 degrés
+          borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 90 degrés
         ),
         label: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0), // Marge interne verticale
           child: Text(
-            'Je veux être notifié',
+            'SUIVANT',
             style: TextStyle(
               color: Colors.white, // Couleur du texte
               fontSize: 18,
