@@ -68,7 +68,7 @@ class PageGenres extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.85,
+              height: MediaQuery.of(context).size.height * 0.75,
               decoration: BoxDecoration(
                 color: Colors.white, // Couleur du rectangle blanc
                 borderRadius: BorderRadius.only(
@@ -87,7 +87,7 @@ class PageGenres extends StatelessWidget {
                 textAlign: TextAlign.center, // Centrer le texte horizontalement
                 style: TextStyle(
                   fontFamily: 'Poppins', // Utilisation de la police Poppins
-                  fontWeight: FontWeight.w800, // Utilisation du poids Medium
+                  fontWeight: FontWeight.bold, // Utilisation du poids Medium
                   fontSize: 28,
                   color: MyColors.myPurplePinkPrimaryValue, // Conversion de l'entier en couleur
                 ),
@@ -97,10 +97,10 @@ class PageGenres extends StatelessWidget {
           Center(
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
-              width: 200,
+              width: MediaQuery.of(context).size.width * 0.55, // Réduire la largeur à 80% de la largeur de l'écran
               child: Text(
                 'Choisis le genre qui te représente le mieux.\n L\'authenticité est la clé des relations significatives',
-                textAlign: TextAlign.center , // Centrer le texte horizontalement
+                textAlign: TextAlign.start, // Alignement à gauche du texte
                 style: TextStyle(
                   fontFamily: 'Poppins', // Utilisation de la police Poppins
                   fontWeight: FontWeight.w400, // Utilisation du poids Medium
@@ -186,7 +186,7 @@ class PageGenres extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0), // Marge interne
                   child: Text(
-                    'Les autres >',
+                    'Autres',
                     style: TextStyle(
                       color: MyColors.myPink, // Couleur du texte rose
                       fontSize: 18,
@@ -199,28 +199,33 @@ class PageGenres extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Ajoutez votre logique pour gérer le clic sur le bouton ici
-        },
-        backgroundColor: MyColors.myPink, // Couleur de fond du bouton
-        elevation: 0, // Aucune élévation
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 90 degrés
-        ),
-        label: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0), // Marge interne verticale
-          child: Text(
-            'SUIVANT',
-            style: TextStyle(
-              color: Colors.white, // Couleur du texte
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 56.0, // Hauteur de votre BottomAppBar
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FloatingActionButton.extended(
+                onPressed: () {
+                  // Ajoutez votre logique pour gérer le clic sur le bouton ici
+                },
+                backgroundColor: MyColors.myPink, // Couleur de fond du bouton
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
+                ),
+                label: Text(
+                  'SUIVANT',
+                  style: TextStyle(
+                    color: Colors.white, // Couleur du texte
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
