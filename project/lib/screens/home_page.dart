@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'connection_page.dart';
 import 'inscription_page.dart';
+import 'page_genres.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -12,7 +13,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           // Background Image
           Image.asset(
-            'assets/images/fond.png',
+            './project/assets/images/fond.png',
             fit: BoxFit.cover,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -76,6 +77,21 @@ class MyHomePage extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 20),
                       ),
                       child: const Text('Se connecter'),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const PageGenres()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                      ),
+                      child: const Text('page genres'),
                     ),
                   ),
                   Container(
