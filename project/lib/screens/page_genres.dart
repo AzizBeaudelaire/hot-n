@@ -11,14 +11,9 @@ class PageGenres extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
+          // Fond blanc
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/fond.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: Colors.white,
           ),
           Positioned(
             top: 40, // Met le texte "<" 20 pixels du haut
@@ -30,13 +25,11 @@ class PageGenres extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => HomePageTest1()),
                 );
               },
-              child: Text(
-                '<',
-                style: TextStyle(
-                  color: MyColors.myPink, // Text color
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Image.asset(
+                'assets/icons/icon_return.png',
+                width: 24,
+                height: 24,
+                color: MyColors.myPink,
               ),
             ),
           ),
@@ -197,34 +190,38 @@ class PageGenres extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 56.0, // Hauteur de votre BottomAppBar
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FloatingActionButton.extended(
-                onPressed: () {
-                  // Ajoutez votre logique pour gérer le clic sur le bouton ici
-                },
-                backgroundColor: MyColors.myPink, // Couleur de fond du bouton
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
-                ),
-                label: Text(
-                  'SUIVANT',
-                  style: TextStyle(
-                    color: Colors.white, // Couleur du texte
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 56.0, // Hauteur du conteneur du bouton "SUIVANT"
+              color: Colors.blue, // Couleur du conteneur du bouton "SUIVANT" (modifiable)
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton.extended(
+                    onPressed: () {
+                      // Ajoutez votre logique pour gérer le clic sur le bouton ici
+                    },
+                    backgroundColor: MyColors.myPink, // Couleur de fond du bouton
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0), // Angles arrondis à 30 degrés
+                    ),
+                    label: Text(
+                      'SUIVANT',
+                      style: TextStyle(
+                        color: Colors.white, // Couleur du texte
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
