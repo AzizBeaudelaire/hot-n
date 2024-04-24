@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'page_nom_prenom.dart';
+import '../main.dart';
+import 'home_page_test1.dart';
 
 class PageGenresRecherches extends StatelessWidget {
   const PageGenresRecherches({Key? key}) : super(key: key);
@@ -9,56 +11,13 @@ class PageGenresRecherches extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
+          // Fond blanc
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/background.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: Colors.white,
           ),
-          // White Rectangle
           Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.85,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(90),
-                  topRight: Radius.circular(90),
-                ),
-              ),
-            ),
-          ),
-          // Skip Button
-          //Positioned(
-          //  top: 40,
-          //  right: 20,
-          //  child: GestureDetector(
-          //    onTap: () {
-          //      Navigator.push(
-          //        context,
-          //        MaterialPageRoute(builder: (context) => PageVeuxVoir()), // Change to appropriate file
-          //      );
-          //    },
-          //    child: Text(
-          //      'Skip',
-          //      style: TextStyle(
-          //        color: Colors.pink, // Change to your desired color
-          //        fontSize: 18,
-          //        fontWeight: FontWeight.bold,
-          //      ),
-          //    ),
-          //  ),
-          //),
-          // Back Button
-          Positioned(
-            top: 40,
-            left: 20,
+            top: 40, // Met le texte "<" 20 pixels du haut
+            left: 20, // Met le texte "<" 20 pixels de la gauche
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -66,16 +25,37 @@ class PageGenresRecherches extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => PageNomPrenom()),
                 );
               },
-              child: Text(
-                '<',
-                style: TextStyle(
-                  color: Colors.pink, // Change to your desired color
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Image.asset(
+                'assets/icons/icon_return.png',
+                width: 24,
+                height: 24,
+                color: MyColors.myPink,
               ),
             ),
           ),
+          //Positioned(
+          //  top: 20, // Met le texte "Skip" 20 pixels du haut
+          //  right: 20, // Met le texte "Skip" 20 pixels de la droite
+          //  child: Padding(
+          //    padding: const EdgeInsets.all(16.0),
+          //    child: GestureDetector(
+          //      onTap: () {
+          //        Navigator.push(
+          //          context,
+          //          MaterialPageRoute(builder: (context) => HomePagetest1()),
+          //        );
+          //      },
+          //      child: Text(
+          //        'Skip',
+          //        style: TextStyle(
+          //          color: MyColors.myPink, // Text color
+          //          fontSize: 18,
+          //          fontWeight: FontWeight.bold,
+          //        ),
+          //      ),
+          //    ),
+          //  ),
+          //),
         ],
       ),
     );

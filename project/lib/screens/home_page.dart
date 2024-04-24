@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           // Background Image
           Image.asset(
-            './project/assets/images/fond.png',
+            'assets/images/fond.png',
             fit: BoxFit.cover,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,

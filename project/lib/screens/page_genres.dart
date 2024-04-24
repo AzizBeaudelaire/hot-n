@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'page_anniversaire.dart';
 import 'home_page_test1.dart';
+import 'page_regle.dart';
 import '../main.dart';
 
 class PageGenres extends StatelessWidget {
@@ -22,7 +23,7 @@ class PageGenres extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePageTest1()),
+                  MaterialPageRoute(builder: (context) => PageRegle()),
                 );
               },
               child: Image.asset(
@@ -56,21 +57,6 @@ class PageGenres extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 0, // Met le texte "Skip" 20 pixels du bas
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.75,
-              decoration: BoxDecoration(
-                color: Colors.white, // Couleur du rectangle blanc
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(90), // Coin supérieur gauche arrondi
-                  topRight: Radius.circular(90), // Coin supérieur droit arrondi
-                ),
-              ),
-            ),
-          ),
           // Ajout du texte au milieu de l'écran
           Center(
             child: SizedBox(
@@ -90,7 +76,7 @@ class PageGenres extends StatelessWidget {
           Center(
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
-              width: MediaQuery.of(context).size.width * 0.55, // Réduire la largeur à 80% de la largeur de l'écran
+              //width: MediaQuery.of(context).size.width * 0.55, // Réduire la largeur à 80% de la largeur de l'écran
               child: Text(
                 'Choisis le genre qui te représente le mieux.\n L\'authenticité est la clé des relations significatives',
                 textAlign: TextAlign.start, // Alignement à gauche du texte

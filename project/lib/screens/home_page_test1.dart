@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'hotn_presentation_page.dart';
 import 'page_genres.dart'; // Import de la page page_genres.dart
+import 'page_regle.dart'; // Import de la page des règles
 
 class HomePageTest1 extends StatelessWidget {
   const HomePageTest1({Key? key});
@@ -67,10 +68,10 @@ class HomePageTest1 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PageGenres()), // Redirection vers la page des genres
+                      MaterialPageRoute(builder: (context) => const PageRegle()), // Redirection vers la page des regles
                     );
                   },
-                  child: const Text('Voir les genres'), // Texte du bouton
+                  child: const Text('Voir les règles'), // Texte du bouton
                 ),
               ],
             ),

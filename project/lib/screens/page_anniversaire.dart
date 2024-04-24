@@ -12,63 +12,24 @@ class PageAnniversaire extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/fond.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          // Navigation Buttons
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.75,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(90),
-                  topRight: Radius.circular(90),
-                ),
-              ),
-            ),
-          ),
-          Center(
-            child: SizedBox(
-              height: 280, // Hauteur fixe de la zone de texte
-              child: Text(
-                'Mon\nanniversaire!',
-                textAlign: TextAlign.start, // Centrer le texte horizontalement
-                style: TextStyle(
-                  fontFamily: 'Poppins', // Utilisation de la police Poppins
-                  fontWeight: FontWeight.w600, // Utilisation du poids Medium
-                  fontSize: 28,
-                  color: MyColors.myPurplePinkPrimaryValue, // Conversion de l'entier en couleur
-                ),
-              ),
-            ),
+            color: Colors.white,
           ),
           Positioned(
-            top: 40,
-            left: 20,
+            top: 40, // Met le texte "<" 20 pixels du haut
+            left: 20, // Met le texte "<" 20 pixels de la gauche
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePageTest1()),
+                  MaterialPageRoute(builder: (context) => PageGenres()),
                 );
               },
-              child: Text(
-                'Return back',
-                style: TextStyle(
-                  color: MyColors.myPink,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Image.asset(
+                'assets/icons/icon_return.png',
+                width: 24,
+                height: 24,
+                color: MyColors.myPink,
               ),
             ),
           ),
@@ -88,8 +49,9 @@ class PageAnniversaire extends StatelessWidget {
                   'Skip',
                   style: TextStyle(
                     color: MyColors.myPink,
+                    fontFamily: 'Poppins', // Utilisation de la police Poppins
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -105,11 +67,12 @@ class PageAnniversaire extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Date de naissance',
+                    'Mon\nanniversaire !',
                     style: TextStyle(
                       color: MyColors.myPurplePinkPrimaryValue,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins', // Utilisation de la police Poppins
+                      fontWeight: FontWeight.w600,
+                      fontSize: 28,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -155,9 +118,10 @@ class PageAnniversaire extends StatelessWidget {
                 label: Text(
                   'SUIVANT',
                   style: TextStyle(
+                    fontFamily: 'Poppins', // Utilisation de la police Poppins
                     color: Colors.white, // Couleur du texte
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
